@@ -27,6 +27,8 @@ public class Patrol : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
+        if(other.gameObject != waypoints[index])
+            return;
         if(other.CompareTag("waypoint")){
             NextDestination();
         }
